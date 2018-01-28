@@ -1,0 +1,16 @@
+@import '../../scss/variables';
+
+.chat-container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #FFF;
+  box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+  border-left: 1px solid $border-color;
+}

@@ -1,0 +1,42 @@
+/*-------------*/
+/* DIRECTORIES */
+/*-------------*/
+$imgDir: '../img/';
+
+/*-------*/
+/* FONTS */
+/*-------*/
+$font-1: 'Roboto', sans-serif;
+// $font-2: 'CircularStd', sans-serif;
+
+/*--------*/
+/* COLORS */
+/*--------*/
+$color-1: #045ABF; // BLUE
+$color-2: #2FC878; // GREEN
+// $color-3: #63E2FF; // LIGHT BLUE
+
+$border-color: #D0D0D0;
+
+$shadow-default: 0 0 20px rgba(0,0,0,.5);
+
+$social-networks-colors: (
+  twitter: 	  #2FC2EF,
+  facebook: 	#3B5998,
+  instagram: 	#E1306C,
+  google:     #D14228,
+  youtube: 	  #e62117,
+  whatsapp:   #84CB33,
+  linkedin:   #007bb6,
+  vimeo:      #4bf
+);
+
+$categories: (
+  dermatologia: #CD63E3,
+  urologia: #8AC249,
+  clinica-medica: #3E50B4,
+  otorrinolaringologia: #FDCD31,
+  pediatria: #F46149,
+  andrologia: #00BBD3,
+  traumatologia: #FF0060,
+)

@@ -1,0 +1,17 @@
+.chatbox {
+  flex-grow: 1;
+  overflow: auto;
+  background-color: #FAFAFA;
+  padding: 5px;
+}
+
+.chatbox-msg {
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px 10px;
+  line-height: 16px;
+  font-size: 14px;
+  float: left;
+  clear: both;
+  border-radius: 4px;
+}

@@ -1,0 +1,118 @@
+.button-base {}
+
+@mixin createBtn(
+		$border-width: 0px,
+		$font-offset: 0,
+		$font-size: 16px,
+		$color: #000,
+		$background-color: transparent,
+		$border-color: transparent,
+		$transition: 0.25s,
+		$border-radius: 0,
+		$font-weight: 400,
+		$rounded: false,
+		$hover-background-color: false,
+		$hover-border-color: false,
+		$hover-color: false) {
+
+	@extend .button-base !optional;
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: $font-size;
+	line-height: 24px;
+	text-align: center;
+	border: $border-width solid $border-color;
+	color: $color;
+	background-color: $background-color;
+	font-weight: $font-weight;
+	cursor: pointer;
+	@if $rounded {
+  	border-radius: 20px;
+	} @else {
+		border-radius: $border-radius;
+	}
+
+	$padding-top: 8px - $border-width + $font-offset;
+	$padding-bottom: 8px - $border-width - $font-offset;
+	padding: $padding-top 20px $padding-bottom;
+	@include transition($transition);
+
+  &.small {
+    font-size: $font-size - 2px;
+    line-height: 20px;
+		$padding-top-small: $padding-top - 3px;
+		$padding-bottom-small: $padding-bottom - 3px;
+		padding: $padding-top-small 15px $padding-bottom-small;
+
+		@if $rounded {
+    	border-radius: 15px;
+  	}
+  }
+
+  &.large {
+    font-size: $font-size + 2px;
+    line-height: 26px;
+		$padding-top-large: $padding-top + 4px;
+		$padding-bottom-large: $padding-bottom + 4px;
+		padding: $padding-top-large 25px $padding-bottom-large;
+
+		@if $rounded {
+    	border-radius: 25px;
+  	}
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+	&:hover, &:focus {
+		@if $hover-background-color { background-color: $hover-background-color; }
+		@if $hover-border-color { border-color: $hover-border-color; }
+		@if $hover-color { color: $hover-color; }
+	}
+}
+
+.btn-default {
+	$btn-default: (
+		font-offset: 2px
+		, border-width: 1px
+		, border-color: $color-1
+		, background-color: $color-1
+		, color: #FFF
+		, font-weight: 600
+		, rounded: false
+		, border-radius: 3px
+		, hover-background-color: rgba($color-1,.8)
+		, hover-color: #FFF
+	);
+	@include createBtn($btn-default...);
+}
+
+.btn-o-default {
+	$btn-o-default: (
+		font-offset: 2px
+		, border-width: 1px
+		, border-color: $color-1
+		, color: $color-1
+		, font-weight: 600
+		, rounded: false
+		, border-radius: 3px
+		, hover-background-color: $color-1
+		, hover-color: #FFF
+	);
+	@include createBtn($btn-o-default...);
+}
+
+
+@each $category, $catColor in $categories {
+  .btn-o-default {
+    &.#{$category} {
+			border-color: $catColor;
+			color: $catColor;
+			&:hover, &:focus {
+				background-color: $catColor;
+				color: #FFF;
+			}
+    }
+  }
+}

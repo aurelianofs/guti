@@ -1,0 +1,138 @@
+$success: green;
+$error: #FF7B8B;
+$text-color: #000;
+$border-color: #DDD;
+
+.form {
+	.button-base {
+		margin-top: 30px;
+	}
+}
+
+.form__group {
+	display: block;
+	margin: 24px 0 0;
+	label.error {
+		display: block;
+		font-size: 0;
+		height: 0;
+		margin: 0;
+	}
+}
+
+.form__label {
+	display: block;
+	padding: 0px;
+	line-height: 20px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #FFF;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.form__input {
+	display: block;
+	border: 1px solid #CECECE;
+	border-radius: 3px;
+	font-size: 14px;
+	padding: 10px 20px 8px;
+	line-height: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	resize: vertical;
+	background-color: transparent;
+	background-size: 10px 5px;
+	background-position: top 13px right 10px;
+	background-repeat: no-repeat;
+	font-weight: 400;
+	color: #666;
+	@include transition;
+	@include placeholder() {
+		color: #A0A0A0;
+		opacity: 1;
+		@include transition;
+	}
+	&:-webkit-autofill {
+		color: #000;
+	}
+	&:focus {
+		border: 1px solid $color-1;
+		@include placeholder {
+			//opacity: 0.5;
+		}
+	}
+}
+
+select.form__input {
+	background-color: transparent;
+	background-size: 13px;
+	background-position: top 15px right 16px;
+	background-repeat: no-repeat;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	&:focus {
+		outline: none;
+	}
+}
+
+
+.form__input-file {
+	font-size: 0;
+	height: 0;
+	padding: 0;
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+
+.form__input-file-mask {
+	display: block;
+	position: relative;
+	background-color: #F5F5F5;
+	padding: 11px 21px 9px;
+	line-height: 20px;
+	font-size: 14px;
+	border-radius: 3px;
+	color: #888888;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.form-checkbox-input {
+	display: none;
+	&:checked + .form-checkbox-mask {
+		color: $text-color;
+	}
+}
+
+.form-checkbox-mask {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	border: 1px solid $border-color;
+	border-radius: 2px;
+	vertical-align: top;
+	color: transparent;
+	line-height: 16px;
+	font-size: 14px;
+	text-align: center;
+	@include transition(.1s);
+}
+
+.form-checkbox-value {
+	font-size: 14px;
+	line-height: 18px;
+	vertical-align: top;
+	margin-left: 10px;
+}
+
+.form-error-label {
+	display: block;
+	color: $error;
+	font-size: 12px;
+	line-height: 20px;
+	margin: -25px 0 30px;
+}
